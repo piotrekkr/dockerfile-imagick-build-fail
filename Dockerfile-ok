@@ -1,0 +1,10 @@
+# syntax=docker/dockerfile:1
+FROM php:8.1.11-fpm-buster
+
+SHELL ["/bin/bash", "-ce"]
+
+RUN <<"EOT"
+  echo $SHELL
+  pecl install imagick
+  exit 1
+EOT
